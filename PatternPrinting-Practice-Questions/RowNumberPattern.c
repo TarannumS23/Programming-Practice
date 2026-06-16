@@ -1,3 +1,10 @@
+/*
+Accept number of rows and columns from user and display below pattern.
+Input : iRow = 3      iCol = 5
+Output : 1 1 1 1 1
+         2 2 2 2 2
+         3 3 3 3 3
+*/
 #include<stdio.h>
 
 void Pattern(int iRow, int iCol)
