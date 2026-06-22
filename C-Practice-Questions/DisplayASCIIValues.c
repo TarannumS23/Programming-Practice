@@ -12,11 +12,11 @@
 
 void Display(char ch)
 {
-    if(ch >= 'A' && ch <= 'Z')
+    if(ch >= 'A' && ch <= 'Z' || ch >= 'a' && ch <= 'z')
     {
         printf("Decimal\n%d\n",ch);
-        printf("Hexadecimal\n%X\n",ch);
-        printf("Octal\n%o\n",ch);
+        printf("Hexadecimal\n0X%X\n",ch);
+        printf("Octal\n0%o\n",ch);
     }
     
 }
