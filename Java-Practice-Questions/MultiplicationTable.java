@@ -1,5 +1,5 @@
 // Write a program to display the multiplication table of a number.
-class displayMulTable 
+class MultiplicationTable 
 {
     public static void main(String A[])
     {

@@ -1,3 +1,4 @@
+// Write a program to find the sum of digits of a number.
 class SumOfDigits
 {
     public static void main(String A[])

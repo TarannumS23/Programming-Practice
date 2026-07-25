@@ -44,3 +44,5 @@ int main()
 
     return 0;
 }
+
+// Time complexity is O(N) where N is the number of digits.

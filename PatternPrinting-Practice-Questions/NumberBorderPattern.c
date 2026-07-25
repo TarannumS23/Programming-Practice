@@ -2,8 +2,8 @@
 Accept number of rows and columns from user and display below pattern.
 Input : iRow = 4      iCol = 4
 output : 1 2 3 4
-         1 @ @ 4
-         1 @ @ 4
+         1 * * 4
+         1 * * 4
          1 2 3 4 
 */
 #include<stdio.h>
@@ -22,7 +22,7 @@ void Pattern(int iRow, int iCol)
            }
            else
            {
-                printf("@\t");
+                printf("*\t");
            }
         }
         printf("\n");

@@ -1,3 +1,4 @@
+// Write a program to check whether a number is a palindrome or not.
 class CheckPallindrome
 {
     public static void main(String A[])
