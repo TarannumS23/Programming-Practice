@@ -1,0 +1,73 @@
+/*
+    Write a program which accepts file name and one character from user and count number of occurrences of that character 
+    from that file.
+
+    Input : Demo.txt     'H'
+    Output : Frequency of H is 2
+*/
+
+#include<stdio.h>
+#include<unistd.h>
+#include<fcntl.h>
+#include<string.h>
+
+# define BUFFER_SIZE 1024
+
+#define ERR_OPEN -1
+
+int CountChar(char *FileName, char ch)
+{
+    char Buffer[BUFFER_SIZE] = {'\0'};
+    int fd = 0, iRet = 0, iCount = 0, i = 0;
+
+    fd = open(FileName,O_RDONLY);
+    if(fd == -1)
+    {
+        return ERR_OPEN;
+    }
+
+    while((iRet = read(fd,Buffer,sizeof(Buffer))) != 0)
+    {
+        for(i = 0; i < iRet; i++)
+        {
+            if(Buffer[i] == ch)
+            {
+                iCount++;
+            }
+        }
+
+        memset(Buffer,'\0',sizeof(Buffer));
+    }
+
+    close(fd);
+
+    return iCount;
+}
+
+int main()
+{   
+    char Fname[30] = {'\0'};
+    int iRet = 0;
+    char cValue;
+
+    printf("Enter the file name : \n");
+    scanf("%[^'\n']s",Fname);
+
+    printf("Enter the character : \n");
+    scanf(" %c",&cValue);
+
+    iRet = CountChar(Fname,cValue);
+
+    if(iRet == ERR_OPEN)
+    {
+        printf("Unable to open file\n");
+    }
+    else
+    {
+        printf("Frequency of '%c' is : %d\n",cValue,iRet);
+    }
+    
+    return 0;
+}
+
+
